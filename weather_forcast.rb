@@ -15,9 +15,9 @@ response = HTTP.get("https://api.openweathermap.org/data/2.5/forecast?q=#{city}&
 weather_data = response.parse
 temp = weather_data["list"][0]["main"]["temp"]
 
-puts "The temperature today in #{city} is #{weather_data["list"][0]["main"]["temp"]}"
+puts "The temperature now in #{city} is #{weather_data["list"][0]["main"]["temp"]}"
 count = 1
-while count <= 5
-  puts "The temperature #{count} day(s) from now in #{city} is #{weather_data["list"][count]["main"]["temp"]}"
+while count < 40
+  puts "The temperature #{count * 3} hours from now in #{city} is #{weather_data["list"][count]["main"]["temp"]}"
   count += 1
 end
